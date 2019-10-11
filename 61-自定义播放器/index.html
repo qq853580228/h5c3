@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>视频播放</title>
+    <!--字体图标库-->
+    <link rel="stylesheet" href="css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/player.css"/>
+</head>
+<body>
+<figure>
+    <figcaption>视频播放器</figcaption>
+    <div class="player">
+        <video src="./video/fun.mp4" muted="muted"></video>
+        <div class="controls">
+            <!--播放/暂停-->
+            <a href="javascript:;" class="switch fa fa-play"></a>
+            <!--播放进度-->
+            <div class="progress">
+                <div class="line"></div>
+                <div class="bar"></div>
+            </div>
+            <!--当前播放时间/播放总时长-->
+            <div class="timer">
+                <span class="current">00:00:00</span> / <span class="total">00:00:00</span>
+            </div>
+            <!--全屏/取消全屏-->
+            <a href="javascript:;" class="expand fa fa-arrows-alt"></a>
+        </div>
+    </div>
+</figure>
+<script src="./js/jquery.min.js"></script>
+<script>
+  // 1. 计算视频总长
+  //  let video = $("video").get(0);
+  let video = $("video")[0]; //把jquery对象转换成dom对象
+  
+  function formatTime(time) {
+    // 对时分秒进行向下取整，否则后面有小数
+    let h = Math.floor(time / 3600 % 24);
+    let m = Math.floor(time / 60 % 60);
+    let s = Math.floor(time % 60);
+    h = h >= 10 ? h : "0" + h;
+    m = m >= 10 ? m : "0" + m;
+    s = s >= 10 ? s : "0" + s;
+    return h + ":" + m + ":" + s;
+  }
+  video.oncanplay = function() { //oncanplay表示该视频准备好开始播放了
+    $("video").show(); //show方法是jquery的方法
+    // console.log(video.duration); //164.815238 秒
+    let totalTime = formatTime(video.duration);
+    $(".total").html(totalTime);
+  }
+
+  // 2. 播放和暂停，如果有fa-play这个类，我们就切换成fa-pause，并且播放
+  $(".switch").on('click', function() {
+    if($(this).hasClass("fa-play")) {
+      video.play(); //原生dom才能使用play这个方法
+      $(this).addClass("fa-pause").removeClass("fa-play");
+    }else {
+      video.pause();
+      $(this).addClass("fa-play").removeClass("fa-pause");
+    }
+  });
+
+  // 3. 进度条显示  当目前的播放位置已更改时
+  video.ontimeupdate = function() {
+    // video.currentTime表示当前的时间
+    $(".current").html(formatTime(video.currentTime));
+    // line盒子的宽度 = 当前时间 / 总时长 * 100%;
+    let lineWidth = video.currentTime / video.duration * 100 + "%";
+    $(".line").css("width", lineWidth);
+  }
+
+  // 4. 全屏显示expand
+  $(".expand").on('click', function() {
+    if($(this).hasClass("fa-arrows-alt")) {
+      video.webkitRequestFullScreen();
+      $(this).addClass("fa-compress").removeClass("fa-arrows-alt");
+    }else {
+      document.webkitCancelFullScreen();
+      $(this).addClass("fa-arrows-alt").removeClass("fa-compress");
+    }
+    if(!document.fullscreenElement) {
+      $(this).addClass("fa-arrows-alt").removeClass("fa-compress");
+    }
+  });
+
+  // 5. 当视频播放完毕之后，用onended重置
+  video.onended = function() {
+    // 视频的当前时间清0
+    video.currentTime = 0;
+    // 同时把按钮改为play
+    $(".switch").addClass("fa-play").removeClass("fa-pause");
+  }
+
+  // 6. 快进功能
+  $(".bar").on('click', function(e) {
+    var offset = e.offsetX;
+    current= offset / $(this).width() * video.duration;
+    $(".current").html(formatTime(current));
+    video.currentTime = current;
+  })
+ 
+  
+</script>
+</body>
+</html>

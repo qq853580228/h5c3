@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="./iconfont/font_wqf14syh6q/iconfont.css"> -->
+  <style>
+    @font-face {
+  font-family: 'iconfont';
+  src: url('./iconfont/font_wqf14syh6q/iconfont.eot');
+  src: url('./iconfont/font_wqf14syh6q/iconfont.eot?#iefix') format('embedded-opentype'),
+      url('./iconfont/font_wqf14syh6q/iconfont.woff2') format('woff2'),
+      url('./iconfont/font_wqf14syh6q/iconfont.woff') format('woff'),
+      url('./iconfont/font_wqf14syh6q/iconfont.ttf') format('truetype'),
+      url('./iconfont/font_wqf14syh6q/iconfont.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 26px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* 全局引入字体图标的css样式太消耗性能，用伪元素方式实现字体图标的插入，content里的内容就是响应图标的unicode */
+.icon-address:before {
+  content: '\e697';
+}
+.icon-course:before {
+  content: '\e698';
+}
+.icon-brightness:before {
+  content: '\e699';
+}
+  </style>
+</head>
+<body>
+  <p class="iconfont icon-address"></p>
+  <p class="iconfont icon-course"></p>
+  <p class="iconfont icon-brightness"></p>
+</body>
+</html>

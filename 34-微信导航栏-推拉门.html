@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav ul {
+            list-style: none;
+        }
+        
+        .nav ul li {
+            float: left;
+            margin: 0 10px;
+            padding-top: 21px;
+        }
+        
+        body {
+            background: url("./files/CSS3入门及提高 07资料/案例/images/wx.jpg") repeat-x;
+        }
+        
+        .nav {
+            height: 75px;
+        }
+        
+        .nav ul li a {
+            display: block;
+            background: url("./files/CSS3入门及提高 07资料/案例/images/to.png") no-repeat;
+            text-decoration: none;
+            text-align: center;
+            line-height: 33px;
+            color: #fff;
+            font-size: 14px;
+            padding-left: 15px;
+        }
+        
+        .nav ul li a span {
+            line-height: 33px;
+            display: block;
+            background: url("./files/CSS3入门及提高 07资料/案例/images/to.png") no-repeat right center;
+            padding-right: 15px;
+        }
+        
+        .nav ul li a:hover {
+            background: url("./files/CSS3入门及提高 07资料/案例/images/ao.png");
+        }
+        
+        .nav ul li a:hover span {
+            background: url("./files/CSS3入门及提高 07资料/案例/images/ao.png") right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href=""><span>首页</span></a></li>
+            <li><a href=""><span>帮助与反馈</span></a></li>
+            <li><a href=""><span>公众平台</span></a></li>
+            <li><a href=""><span>开放平台</span></a></li>
+            <li><a href=""><span>表情开放平台</span></a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

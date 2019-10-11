@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 150px;
+            height: 150px;
+            border: 1px solid crimson;
+            margin: 100px auto;
+            background-color: pink;
+            /* 转换中心点缩放 */
+            /* transform-origin: left bottom; */
+        }
+        
+        div:hover {
+            /* transform: scale(x, y) ,大于1代表宽度放大x倍，高度放大y倍，小于1则是宽度缩小x倍，高度缩小y倍*/
+            /* transform: scale(2, 2); */
+            /* transform: scale(0.5); */
+            /* 等比例缩放 transform: scale(x)，宽度和高度都缩放x倍*/
+            transform: scale(2);
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

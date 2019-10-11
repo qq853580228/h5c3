@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            /* 子元素开启立体空间 */
+            transform-style: preserve-3d;
+            margin: 120px auto;
+            transition: all 1s;
+        }
+        
+        .zjl,
+        .zxc {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            text-align: center;
+            border-radius: 50%;
+            color: white;
+            line-height: 150px;
+        }
+        
+        .zjl {
+            background-color: red;
+            z-index: 1;
+        }
+        
+        .zxc {
+            background-color: aqua;
+            transform: rotateY(180deg);
+        }
+        
+        .box:hover {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="zjl">周杰伦</div>
+        <div class="zxc">周星驰</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    form {
+      width: 600px;
+      margin: 20px auto;
+    }
+    fieldset {
+      padding: 10px;
+    }
+    fieldset label {
+      font-size: 14px;
+    }
+    fieldset input {
+      width: 100%;
+      margin: 5px 0;
+      height: 30px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    fieldset meter {
+      width: 100%;
+      height: 30px;
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <form action="">
+    <fieldset>
+      <legend>
+          学生档案  
+      </legend>
+      <label for="name">姓名：</label>
+      <input type="text" id="name" autocomplete="off" placeholder="请输入用户名">
+      <label for="tel">手机号码：</label>
+      <input type="tel" id="tel" autocomplete="off">
+      <label for="email">邮箱地址：</label>
+      <input type="email" id="email" autocomplete="off" required>
+      <label for="academy">所属学院：</label>
+      <input type="text" id="collage" list="collageList" autocomplete="off"  placeholder="请选择">
+      <datalist id="collageList">
+        <option value="马院">马院</option>
+        <option value="牛院">牛院</option>
+        <option value="猪院">猪院</option>
+      </datalist>
+      <label for="score">入学成绩：</label>
+      <input type="number" id="score" autocomplete="off" max="100" min="0" value="0">
+      <label for="">基础水平：</label>
+      <meter max="100" min="0" high="90" low="59" id="scoreMeter"></meter>
+      <label for="">入学日期：</label>
+      <input type="date" id="enrollmentDate" autocomplete="off">
+      <label for="">毕业日期：</label>
+      <input type="date" id="graduetionDate" autocomplete="off">
+      <input type="submit" value="提交">
+    </fieldset>
+  </form>
+  <script>
+    var score = document.querySelector('#score');
+    var scoreMeter = document.querySelector('#scoreMeter');
+    var tel = document.querySelector('#tel');
+    score.oninput = function() {
+      scoreMeter.value = this.value;
+    }
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+﻿/*
+* @Author: apple
+* @Date:   2017-10-08 17:33:08
+* @Last Modified by:   apple
+* @Last Modified time: 2017-10-09 23:16:06
+*/
+#bg {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 2s;
+}
+.rotate {
+  transform: translate(-50%, -50%) rotateZ(-60deg) !important; 
+}
+.row1 .orb1,
+.row1 .orb2 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  left: 50%;
+  margin-top: -280px;
+  margin-left: -30px;
+  
+}
+.row1 .orb2 {
+  margin-top: -80px;
+  margin-left: 400px;
+}
+.row1 div,
+.row2 div,
+.row3 div {
+  background: -webkit-linear-gradient(top, #fff, #dedede);
+  border-radius: 50%;
+}
+
+.row2 .orb1,
+.row2 .orb2,
+.row2 .orb3 {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  top: 50%;
+  left: 50%;
+  margin-top: -180px;
+  margin-left: -430px;
+}
+.row2 .orb2 {
+  margin-top: -280px;
+  margin-left: 500px;
+}
+.row2 .orb3 {
+  margin-top: 80px;
+  margin-left: 50px;
+}
+
+.row3 .orb1,
+.row3 .orb2,
+.row3 .orb3 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  margin-top: -180px;
+  margin-left: -430px;
+}
+.row3 .orb2 {
+  margin-top: -280px;
+  margin-left: 500px;
+}
+.row3 .orb3 {
+  margin-top: 280px;
+  margin-left: 250px;
+}
+
+.row1 div {
+  animation: orbmove 100s linear infinite ;
+}
+.row2 div {
+  animation: orbmove 40s linear infinite ;
+}
+.row3 div {
+  animation: orbmove 80s linear infinite ;
+}
+@keyframes orbmove {
+  from {
+    transform: translateX(0) rotate(0);
+  }
+  to {
+    transform: translateX(-2000px) rotate(-3600deg);
+  }
+}
+/* 第一屏 */
+.section1 {
+  perspective: 1000px;
+}
+.comein .p1 {
+  position: absolute;
+  width: 880px;
+  height: 320px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateZ(0) rotateY(0deg);
+  background: url(../images/skin.gif) no-repeat;
+}
+.p1 {
+  position: absolute;
+  width: 880px;
+  height: 320px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateZ(500px) rotateY(180deg);
+  background: url(../images/skin.gif) no-repeat;
+  transition: all 1.5s;
+}
+
+/* 第二屏 */
+.section2 {
+  perspective: 1000px;
+}
+.p2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateZ(-6000px) scale(0.1);
+  width: 316px;
+  height: 360px;
+  text-align: center;
+  transition: all 2s;
+}
+
+/* 第三屏 */
+.section3 {
+  perspective: 1000px;
+}
+.p3 {
+  position: absolute;
+  width: 1440px;
+  height: 760px;
+  top: 50%;
+  left: 50%;
+  margin-left: -270px;
+  margin-top: -284px;
+  /* transform: translateZ(-50px) rotateX(30deg); */
+  transform: translateZ(1200px) rotateX(120deg);
+  background-color: aqua;
+  transition: all 2s;
+}
+.title3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -412px;
+  margin-top: -10px;
+  transform: translateZ(1200px) rotateY(-60deg);
+  transition: all 2s;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul {
+            margin: 100px auto;
+            width: 400px;
+        }
+        
+        ul li {
+            list-style: none;
+            float: left;
+            margin-left: 10px;
+            perspective: 500px;
+        }
+        
+        .box {
+            width: 70px;
+            height: 40px;
+            position: relative;
+            /* 子元素开启立体空间 */
+            transform-style: preserve-3d;
+            transition: all 1s;
+        }
+        
+        .zjl,
+        .zxc {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            text-align: center;
+            color: white;
+            line-height: 40px;
+        }
+        
+        .zjl {
+            background-color: red;
+            /* 先移动后旋转 */
+            transform: translateY(20px) rotateX(-90deg);
+        }
+        
+        .zxc {
+            background-color: aqua;
+            /* 需要往前移动，如果在.zjl移动，盒子就会跑偏 */
+            transform: translateZ(20px);
+        }
+        
+        .box:hover {
+            transform: rotateX(90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <div class="box">
+                <div class="zjl">周杰伦</div>
+                <div class="zxc">周星驰</div>
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="zjl">周杰伦</div>
+                <div class="zxc">周星驰</div>
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="zjl">周杰伦</div>
+                <div class="zxc">周星驰</div>
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="zjl">周杰伦</div>
+                <div class="zxc">周星驰</div>
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="zjl">周杰伦</div>
+                <div class="zxc">周星驰</div>
+            </div>
+        </li>
+    </ul>
+</body>
+
+</html>

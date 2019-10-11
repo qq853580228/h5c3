@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .silder {
+            width: 520px;
+            height: 280px;
+            background-color: pink;
+            position: relative;
+            margin: 100px auto;
+        }
+        
+        .arror-l,
+        .arror-r {
+            position: absolute;
+            top: 50%;
+            margin-top: -18px;
+            width: 24px;
+            height: 36px;
+            display: block;
+        }
+        
+        .arror-l {
+            left: 0;
+        }
+        
+        .arror-r {
+            right: 0;
+        }
+        
+        .circle {
+            list-style: none;
+            width: 65px;
+            height: 13px;
+            position: absolute;
+            bottom: 15px;
+            background-color: rgba(255, 255, 255, .2);
+            border-radius: 3px;
+            left: 50%;
+            margin-left: -32.5px;
+        }
+        
+        ul li {
+            float: left;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background-color: #b7b7b7;
+            margin: 2px;
+        }
+        
+        .current {
+            background-color: #F40!important;
+        }
+        
+        .box {
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="silder">
+        <img src="./files/CSS3入门及提高 06资料/案例/images/taobao.jpg" alt="">
+        <a href="javascript:;" class="arror-l"><img src="./files/CSS3入门及提高 06资料/案例/images/left.png" alt=""></a>
+        <a href="javascript:;" class="arror-r"><img src="./files/CSS3入门及提高 06资料/案例/images/right.png" alt=""></a>
+        <ul class="circle">
+            <li class="current"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

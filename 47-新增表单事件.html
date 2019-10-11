@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+ <form action="">
+    用户名：<input type="text" name="userName" >
+  手机号：<input type="tel" name="userPhone" id="" pattern="/^1\d{10}$/">
+  <input type="submit" value="提交">
+ </form>
+ <script>
+  //  oninput监听指定元素的内容发生了改变就会触发的事件，onchange事件只在键盘或者鼠标改变对象属性，且失去焦点时触发，脚本触发无效；
+   document.querySelector("input[type='text']").oninput = function() {
+    console.log('oninput' + this.value);
+    
+   }
+  //  onkeyup键盘弹起触发的事件
+   document.querySelector("input[type='text']").onkeyup = function() {
+    console.log('onkeyup' + this.value);
+   }
+  //  oninvalid验证不通过时触发
+  document.querySelector("input[type='tel']").oninvalid = function() {
+    // 设置默认的提示信息
+    this.setCustomValidity("请输入合法的11位手机号码！");
+   }
+ </script>
+</body>
+</html>

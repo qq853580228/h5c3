@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .top {
+            height: 60px;
+            background-color: #000;
+        }
+        
+        .banner {
+            width: 960px;
+            height: 400px;
+            background-color: skyblue;
+            margin: 20px auto;
+            border-radius: 15px;
+        }
+        
+        .main {
+            width: 960px;
+            margin: 0px auto;
+            /* overflow: hidden、auto或者scroll; */
+        }
+        
+        .main ul {
+            list-style: none;
+        }
+        
+        .main ul li {
+            float: left;
+            width: 232.5px;
+            height: 200px;
+            text-align: center;
+            background-color: pink;
+        }
+        
+        .main ul li:nth-child(even) {
+            background-color: crimson;
+            margin-left: 10px;
+        }
+        
+        .main ul li:nth-child(3) {
+            margin-left: 10px;
+        }
+        /*  .clearfix:after {
+            content: '.';
+            display: block;
+            height: 0;
+            隐藏盒子
+            visibility: hidden;
+            清除浮动
+            clear: both;
+        }
+        
+        .clearfix {
+             * 代表IE6、7能识别的特殊符号，带有*这个信息的属性，只有IE6、7才能执行
+                zoom 就是IE6、7清除浮动的方法
+             
+            *zoom: 1;
+        } */
+        /* 双伪元素清除浮动 */
+        
+        .clearfix:before,
+        .clearfix:after {
+            content: '';
+            /* 触发BFC来清除浮动 */
+            display: table;
+        }
+        
+        .clearfix:after {
+            clear: both;
+        }
+        
+        .clearfix {
+            *zoom: 1;
+        }
+        
+        .footer {
+            height: 100px;
+            background-color: #000;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">top</div>
+    <div class="banner">banner</div>
+    <div class="main clearfix">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <!-- 额外标签法清除浮动 -->
+        <!-- <div style="clear: both"></div> -->
+    </div>
+
+    <div class="footer">footer</div>
+</body>
+
+</html>

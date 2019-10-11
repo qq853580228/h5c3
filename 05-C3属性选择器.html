@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        button {
+            cursor: pointer;
+        }
+        /* 属性选择器 */
+        /* 权重：属性选择器=类选择器=伪类选择器=10 */
+        /* 选择具有 disabled属性的元素*/
+        
+        button[disabled] {
+            cursor: default;
+        }
+        /* input[value="搜索框"] {
+            color: pink;
+        } */
+        /* 选择具有 type属性且属性值等于search的元素*/
+        
+        input[type="search"] {
+            color: rgb(255, 16, 16);
+        }
+        /* 匹配具有class属性，且以icon开头的元素 */
+        
+        div[class^="icon"] {
+            color: brown;
+        }
+        /* 匹配具有class属性，且以icon结尾的元素 */
+        
+        div[class$="icon"] {
+            color: coral;
+        }
+        /* 匹配具有class属性，且含有icon属性值的元素 */
+        /* 权重都一样，执行效果为最后一个样式 */
+        
+        div[class*="icon"] {
+            color: cyan;
+        }
+    </style>
+</head>
+
+<body>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button disabled="disabled">按钮</button>
+    <button disabled="disabled">按钮</button>
+    <input type="text" name="" id="" value="文本框">
+    <input type="text" name="" id="" value="文本框">
+    <input type="text" name="" id="" value="文本框">
+    <input type="search" name="" id="" value="搜索框">
+    <input type="search" name="" id="" value="搜索框">
+    <input type="search" name="" id="" value="搜索框">
+    <div class="icon0">图标1</div>
+    <div class="icon1">图标2</div>
+    <div class="icon2">图标3</div>
+    <div class="icon3">图标4</div>
+    <div class="iicon">图标5</div>
+</body>
+
+</html>

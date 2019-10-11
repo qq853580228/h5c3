@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .box {
+      width: 900px;
+      height: 500px;
+      margin: 50px auto;
+      border: 1px solid #ccc;
+      display: flex;
+      /* 让子元素从父容器的起始位置开始排列 */
+      /* justify-content: flex-start; */
+      /* 让子元素从父容器的结束位置开始排列 */
+      /* justify-content: flex-end; */
+      /* 让子元素从父容器的中间位置开始排列 */
+      /* justify-content: center; */
+      /* 左右对齐父容器的开始和结束，中间平均分页，产生相同的间距 */
+      /* justify-content: space-between; */
+      /* 将多余的空间平均的分页在每一个子元素的两边， margin: 0 auto，造成中间的盒子的间距是左右两边盒子间距的两倍 */
+
+      /* flex-flow: flex-wrap和flex-direction的组合 */
+      /*  
+      flex-wrap：控制子元素是否换行显示，默认不换行
+      nowrap： 不换行
+      wrap：换行
+      wrap-reverse: 翻转，原来是从上到下，翻转后就是从下到上排列
+      */
+
+      /*  
+      flex-direction：设置子元素的排列方向（主轴方向，默认是row排列，X轴）
+      row: 水平方向排列，从左到右
+      row-reverse： 水平方向排列，从右到左
+      column： 垂直方向排列，从上到下
+      column-reverse： 垂直方向排列，从下到上
+      */
+      
+      /*  
+      align-items：设置子元素在侧轴方向上的对齐方式
+      center：在侧轴方向上居中对齐
+      flex-start：在侧轴方向上顶对齐
+      flex-end：在侧轴方向上底对齐
+      stretch：让子元素（子元素没有设置高度的情况下，默认高度拉伸）在侧轴方向上进行拉伸，填满整个侧轴方向
+      baseline： 文本基线
+      */
+      flex-wrap: wrap;
+      /* 
+      align-content：子元素存在多行时侧轴方向的设置 
+      */
+      align-content: space-between;
+      
+    }
+    .one,
+    .two,
+    .three,
+    .four
+     {
+      width: 200px;
+      height: 200px;
+    }
+    .one {
+      /* align-self： 设置单个元素在侧轴上的对齐方式 */
+      /* align-self: center; */
+      background-color: red;
+    }
+    .two {
+      background-color: green;
+    }
+    .three {
+      background-color: blue;
+    }
+    .four {
+      background-color: pink;
+    }
+    /* .five {
+      background-color: peachpuff;
+    } */
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="one">1</div>
+    <div class="two">2</div>
+    <div class="three">3</div>
+    <div class="four">4</div>
+    <div class="one">1</div>
+    <div class="two">2</div>
+    <div class="three">3</div>
+    <div class="four">4</div>
+  </div>
+</body>
+</html>

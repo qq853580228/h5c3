@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div img {
+      width: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <img src="./周杰伦.jpg" alt="">
+    <button class="full">全屏</button>
+    <button class="cancelFull">退出全屏</button>
+    <button class="isFull">是否全屏</button>
+  </div>
+  <script>
+    /* 
+    全屏操作的主要方法和属性
+    1. requestFullScreen()，开启全屏显示
+    2. 不同浏览器需要添加不同的前缀， chrome：webkit  ie：ms firebox： moz opera： o
+    3. cancelFullScreen()，退出全屏显示，退出全屏只能通过document实现
+    4. fullscreenElement(只有在火狐浏览器下采用了驼峰命名法)，是否是全屏状态，也只能使用document实现
+    */
+    window.onload = function() {
+      var div = document.querySelector("div");
+      var full = document.querySelector(".full");
+      var cancelFull = document.querySelector(".cancelFull");
+      var isFull = document.querySelector(".isFull");
+      // 全屏显示
+      full.onclick = function() {
+        if(div.requestFullScreen) {
+          div.requestFullscreen();
+        }
+        else if(div.webkitRequestFullScreen) {
+          div.webkitRequestFullScreen();
+        }else if(div.msRequestFullScreen) {
+          div.msRequestFullScreen();
+        }else if(div.mozRequestFullScreen) {
+          div.mozRequestFullScreen();
+        }
+      }
+
+      // 退出全屏
+      cancelFull.onclick = function() {
+        if(document.cancelFullScreen) {
+          document.requestFullscreen();
+        }
+        else if(document.webkitCancelFullScreen) {
+          document.webkitCancelFullScreen();
+        }else if(document.msCancelFullScreen) {
+          document.msCancelFullScreen();
+        }else if(document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        }
+      }
+
+      // 是否是全屏状态
+      isFull.onclick = function() {
+        if(document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement|| document.mozFullScreenElement) {
+          console.log(true);
+        }
+        else {
+          console.log(false);
+        }
+      }
+    }
+  </script>
+</body>
+</html>

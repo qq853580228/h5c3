@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 120px;
+            height: 20px;
+            border: 1px solid #ccc;
+            white-space: nowrap;
+            /* 必须先强制一行，否则没有效果 */
+            /* word-break: break-all; 允许单词拆开显示 */
+            /* word-break: keep-all; */
+            /* text-overflow: clip; 超出裁剪 */
+            /* text-overflow: ellipsis;  超出部分显示省略号*/
+            /* overflow: hidden; */
+            /* 不允许拆开单词显示，若有连字符如 - ，为特殊情况 */
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div>my name is an-dy</div>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        section {
+            width: 450px;
+            height: 300px;
+            position: relative;
+            margin: 100px auto;
+            border: 1px solid #ccc;
+            background: url("./files/CSS3入门及提高 08资料/案例/images/1.jpg");
+            perspective: 800px;
+        }
+        
+        .door-l,
+        .door-r {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            background-color: rgb(189, 39, 69);
+            top: 0;
+            transition: all 0.8s;
+        }
+        
+        .door-l {
+            left: 0;
+            border-right: 1px solid #000;
+        }
+        
+        .door-r {
+            right: 0;
+            border-left: 1px solid #000;
+        }
+        
+        .door-l::before,
+        .door-r::before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .door-l::before {
+            right: 3px;
+        }
+        
+        .door-r::before {
+            left: 3px;
+        }
+        
+        .door-l {
+            transform-origin: left center;
+        }
+        
+        .door-r {
+            transform-origin: right center;
+        }
+        
+        section:hover .door-l {
+            transform: rotateY(-120deg);
+        }
+        
+        section:hover .door-r {
+            transform: rotateY(120deg);
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="door-l"></div>
+        <div class="door-r"></div>
+    </section>
+</body>
+
+</html>

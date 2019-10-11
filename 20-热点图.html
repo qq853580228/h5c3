@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .map {
+            width: 649px;
+            height: 518px;
+            background: url("./map.png") no-repeat;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .city {
+            position: absolute;
+            top: 191px;
+            right: 173px;
+        }
+        
+        .tb {
+            top: 415px;
+            right: 81px;
+        }
+        
+        .gz {
+            top: 444px;
+            right: 169px;
+        }
+        
+        .dotted {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #09f;
+        }
+        
+        .city div[class^="pulse"] {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 6px;
+            height: 6px;
+            box-shadow: 0 0 10px #009dfd;
+            border-radius: 50%;
+            animation: pulse 1.2s linear infinite;
+        }
+        
+        .pulse2 {
+            animation-delay: 0.4s!important;
+        }
+        
+        .pulse3 {
+            animation-delay: 0.8s!important;
+        }
+        
+        @keyframes pulse {
+            0% {}
+            70% {
+                width: 30px;
+                height: 30px;
+                opacity: 1;
+            }
+            100% {
+                width: 60px;
+                height: 60px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="map">
+        <div class="city">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+        <div class="city tb">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+        <div class="city gz">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+    </div>
+</body>
+
+</html>

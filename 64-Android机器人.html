@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #ccc;
+    }
+    .content {
+      width: 500px;
+      height: 500px;
+      border: 1px solid red;
+      margin: 30px auto;
+    }
+    .an-header {
+      position: relative;
+      width: 250px;
+      height: 125px;
+      border-radius: 125px 125px 0 0/ 125px 125px 0 0;
+      background-color: darkgreen;
+      margin: 10px auto;
+    }
+    .an-header:before,
+    .an-header:after {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+    .an-header:before {
+      left: 80px;
+      top: 62px;
+    }
+    .an-header:after {
+      left: 160px;
+      top: 62px;
+    }
+    .an-body {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      background-color: darkgreen;
+      margin: 0 auto;
+      border-radius: 0 0 20px 20px;
+    }
+    .an-body:before,
+    .an-body:after {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 25px;
+      height: 200px;
+      background-color: darkgreen;
+      border-radius: 10px;
+    }
+    .an-body:before {
+      left: -35px;
+    }
+    .an-body:after {
+      right: -35px;
+    }
+    .an-footer {
+      position: relative;
+    }
+    .an-footer:before,
+    .an-footer:after {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 25px;
+      height: 100px;
+      background-color: darkgreen;
+      border-radius: 0 0 15px 15px;
+      
+    }
+    .an-footer:before {
+      left: 50%;
+      margin-left: -60px;
+    }
+    .an-footer:after {
+      right: 50%;
+      margin-right: -60px;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="an-header"></div>
+    <div class="an-body"></div>
+    <div class="an-footer"></div>
+  </div>
+</body>
+</html>

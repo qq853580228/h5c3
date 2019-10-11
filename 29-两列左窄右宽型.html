@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* 并集选择器，省代码量 */
+        
+        .top,
+        .banner,
+        .main,
+        .footer {
+            width: 960px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+            text-align: center;
+            border: 1px dashed #ccc;
+        }
+        
+        .top {
+            background-color: red;
+            height: 100px;
+        }
+        
+        .banner {
+            background-color: blue;
+            height: 150px;
+        }
+        
+        .main {
+            height: 200px;
+        }
+        
+        .left {
+            width: 355px;
+            height: 200px;
+            float: left;
+            background-color: green;
+        }
+        
+        .right {
+            width: 595px;
+            height: 200px;
+            float: right;
+            background-color: gold;
+        }
+        
+        .footer {
+            background-color: orange;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">top</div>
+    <div class="banner">banner</div>
+    <div class="main">
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+    <div class="footer">footer</div>
+</body>
+
+</html>

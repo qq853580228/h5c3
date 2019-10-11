@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 谷歌浏览把自动播放功能给禁用了，解决方案： muted="muted"-->
+    <!-- 
+    controls：音频播放器的控制面板
+    loop：循环播放
+    muted：静音
+    poster：当视频还没有完全下载或者用户还没有点击播放视频默认显示的画面，默认为当前视频的第一帧。
+    width：宽
+    height：高
+
+    ****设置宽高的时候，一般情况下只会设置宽度或者是高度，让其自动等比例缩放，如果同时设置宽度和高度，
+    那么视频并不会真正调整到设置的宽高，除非设置的值刚好是等比例的****
+    -->
+    <!-- <video controls="controls" src="https://1251250874.vod2.myqcloud.com/439f276avodtransgzp1251250874/cc3140e65285890788097387748/v.f20.mp4"></video> -->
+    <video controls="controls" muted="muted" loop="loop" poster="./周杰伦.jpg">
+        <source src="https://1251250874.vod2.myqcloud.com/439f276avodtransgzp1251250874/cc3140e65285890788097387748/v.f20.mp4" type="video/mp4">
+        <source src="https://1251250874.vod2.myqcloud.com/439f276avodtransgzp1251250874/cc3140e65285890788097387748/v.f20.ogg" type="video/ogg">
+        <!-- 
+        source：因为不同的浏览器支持的视频文件格式不一样。所以我们在进行视频添加的时候，需要考虑到浏览器是否支持。
+        我们可以准备多个格式的视频文件，让浏览器自动选择
+        -->
+          你的浏览器太Low了！
+    </video>
+</body>
+
+</html>

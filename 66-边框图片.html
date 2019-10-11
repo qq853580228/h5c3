@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>边框图片的本质是背景，并不会影响元素内容的放置，类似九宫格效果，9个位置 一一对应</title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			div {
+				width: 300px;
+				height: 300px;
+				margin: 10px auto;
+				/* border: 27px solid red; */
+				border: 1px solid red;
+				padding: 27px;
+				/* 添加边框图片 */
+				/* border-image-source：可以指定边框图片的路径，默认只是填充到容器的4个角点 */
+				border-image-source: url(../images/thermostat_cold_on.png);
+				/* 让它变成九宫格 slice设置4个方向上的裁切距离（无单位）.fill 是做内容的内部填充 */
+				border-image-slice: 27 fill;
+				/* width：边框图片的宽度值。没有设置该属性，那么宽度默认就是元素的原始的边框宽度 
+				细节：
+				1.边框图片的本质是背景，不会影响元素内容的放置
+				2.元素内容只会被容器的padding和border影响。
+				建议：一般将值设置为原始的边框的宽度。
+				*/
+				border-image-width: 27;
+				border-image-outset: 0px; /* 类似添加padding，使用非常少 */
+				/* repeat：直接重复平铺；round：将内容缩放，进行完全填充，推荐使用 */
+				border-image-repeat: repeat; 
+				/* 缩写 */
+				/* border-image: source slice /width/outset /repeat; */
+				/* border-image: url(../images/thermostat_cold_on.png) 27/ 27px/0px /round; */
+			}
+		</style>
+	</head>
+	<body>
+		<div>边框图片的本质是背景，不会影响元素内容的放置</div>
+	</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .div1,
+  .div2 {
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin: 50px 0 0 50px;
+  }
+  .div1 {
+    border: 1px solid #666;
+  }
+  .div2 {
+    border: 1px solid pink;
+  }
+  .div1 .p1,
+  .div1 .p2 {
+    background-color: blue;
+    margin-bottom: 5px;
+  }
+</style>
+<body>
+  <div class="div1">
+    <p class="p1" draggable="true">被拖拽的p标签1</p>
+    <p class="p2" draggable="true">被拖拽的p标签2</p>
+  </div>
+  <div class="div2"></div>
+</body>
+<script>
+  /*应用于被拖拽元素的事件
+    ondrag         应用于拖拽元素，整个拖拽过程都会调用--持续
+    ondragstart    应用于拖拽元素，当拖拽开始时调用
+    ondragleave    应用于拖拽元素，当鼠标离开拖拽元素时调用
+    ondragend      应用于拖拽元素，当拖拽结束时调用
+  */
+  let p1 = document.querySelector(".p1");
+    /* p1.ondrag = function() {
+      console.log('ondrag');
+      
+    }
+    p1.ondragstart = function() {
+      console.log('ondragstart');
+      
+    }
+    p1.ondragleave = function() {
+      console.log('ondragleave');
+      
+    }
+    p1.ondragend = function() {
+      console.log('ondragend');
+      
+    } */
+
+  let div2 = document.querySelector(".div2");
+  /*应用于目标元素的事件
+    ondragenter    应用于目标元素，当拖拽元素进入时调用
+    ondragover     应用于目标元素，当停留在目标元素上时调用
+    ondrop         应用于目标元素，当在目标元素上松开鼠标时调用
+    ondragleave    应用于目标元素，当鼠标离开目标元素时调用
+  */
+  div2.ondragenter = function() {
+    console.log('ondragenter');
+    
+  }
+  div2.ondragover = function(e) {
+    console.log('ondragover');
+    // 如果想触发ondrop事件，那么就必须在这个位置阻止浏览器的默认行为
+    e.preventDefault();
+    
+  }
+  div2.ondrop = function() {
+    console.log('ondrop');
+    // 浏览器默认会阻止ondrop事件，我们必须在ondragover中阻止浏览器的默认行为
+    div2.appendChild(p1)
+  }
+  div2.ondragleave = function() {
+    console.log('目标元素的ondragleave');
+    
+  }
+</script>
+</html>

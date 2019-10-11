@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            min-width: 600px;
+        }
+        
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        
+        .clearfix {
+            *zoom: 1;
+        }
+        
+        .header {
+            height: 80px;
+            background-color: darkorange;
+        }
+        
+        .container {
+            overflow: hidden;
+        }
+        
+        .middle .m_inner {
+            padding: 0 200px;
+        }
+        
+        .middle,
+        .left,
+        .right {
+            padding-bottom: 10000px;
+            margin-bottom: -10000px;
+        }
+        
+        .middle {
+            float: left;
+            width: 100%;
+            background-color: pink;
+        }
+        
+        .left {
+            margin-left: -100%;
+            float: left;
+            width: 200px;
+            background-color: chocolate;
+        }
+        
+        .right {
+            margin-left: -200px;
+            float: left;
+            width: 200px;
+            background-color: rgb(30, 210, 45);
+        }
+        
+        .footer {
+            height: 80px;
+            background-color: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">header</div>
+    <div class="container clearfix">
+        <div class="middle">
+            <div class="m_inner">
+                <h1>middle</h1>
+                <h1>middle</h1>
+                <h1>middle</h1>
+                <h1>middle</h1>
+                <h1>middle</h1>
+                <h1>middle</h1>
+                <h1>middle</h1>
+                <h1>middle</h1>
+
+            </div>
+        </div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+    <div class="footer">footer</div>
+</body>
+
+</html>

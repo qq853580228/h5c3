@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 既是span属性又是div的第一个孩子，结果就是没有选中第一个span */
+        /* div span:nth-child(1) {
+            background-color: aqua;
+        } */
+        /* of-type选中元素指定的类型 */
+        
+        div span:first-of-type {
+            background-color: chocolate;
+        }
+        
+        div span:nth-of-type(2) {
+            background-color: rgb(53, 153, 247);
+        }
+        
+        div span:last-of-type {
+            background-color: rgb(20, 156, 115);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>我的P标签</p>
+        <span>我的span标签</span>
+        <span>我的span标签</span>
+        <span>我的span标签</span>
+    </div>
+</body>
+
+</html>
